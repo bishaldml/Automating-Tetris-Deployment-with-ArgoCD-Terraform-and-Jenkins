@@ -54,9 +54,70 @@ With Jenkins up and running, you configure pipelines to automate the end-to-end 
 
 1. ssh to the newly created instance.
 2. cat /var/lib/jenkins/secrets/initialAdminPassword
-3. 
 
+##### Installing necessary puglins on the jenkins server : Go to Jenkins dashboard -> Manage Jenkins -> Manage Plugins -> Available tab.
+1. terraform
+2. 
 
+##### Configuration of the Tools: Go to Dashboard > Manage Jenkins > System Configuration-tools
+1. search for terraform.
+2. give name: terraform
+3. click on install automatically
+4. apply and save.
+
+#### First Job for terraform.
+1. Click on new job on jenkins dashboard.
+2. Give name: terraform-project-bsl
+3. pipeline
+4. ok
+5. click on "discard old builds->Max of builds to keep:3"
+6. Click on "This project is paramaterized-> Add Parameter->Choice Parameter->Give Name:Action and Choices: apply and destory"
+7. Pipeline:
+```
+pipeline{
+    agent any
+    stages {
+        stage('Checkout from Git'){
+            steps{
+                git branch: 'main', url: 'https://github.com/bishaldml/Tetris-V1.git'
+            }
+        }
+        stage('Terraform version'){
+             steps{
+                 sh 'terraform --version'
+             }
+        }
+        stage('Terraform init'){
+             steps{
+                 dir('Eks-terraform') {
+                      sh 'terraform init'
+                   }
+             }
+        }
+        stage('Terraform validate'){
+             steps{
+                 dir('Eks-terraform') {
+                      sh 'terraform validate'
+                   }
+             }
+        }
+        stage('Terraform plan'){
+             steps{
+                 dir('Eks-terraform') {
+                      sh 'terraform plan'
+                   }
+             }
+        }
+        stage('Terraform apply/destroy'){
+             steps{
+                 dir('Eks-terraform') {
+                      sh 'terraform ${action} --auto-approve'
+                   }
+             }
+        }
+    }
+}
+```
 ## STEP-
 
 
