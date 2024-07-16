@@ -43,7 +43,7 @@ terraform apply
 Or,
 terraform apply --auto-approve (provide this cmd only if you are sure for your code to run sucessfully)
 ```
-### *Note: You need to install the terraform on your local machine to run the above tf commands.
+### *Note: You need to install the terraform on your local machine to run the above tf commands. ( Jenkins, docker, sonarqube container, trivy, terraform, kubectl and aws cli are also install)
 
 
 ## STEP-2: Setting up Jenkins Pipeline
