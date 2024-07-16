@@ -46,7 +46,14 @@ terraform apply --auto-approve (provide this cmd only if you are sure for your c
 ### *Note: You need to install the terraform on your local machine to run the above tf commands.
 
 
-## STEP-
+## STEP-2: Setting up Jenkins Pipeline
+With Jenkins up and running, you configure pipelines to automate the end-to-end CI/CD process. The pipelines are responsible for orchestrating the entire workflow, from provisioning AWS EKS clusters with Terraform to deploying applications to EKS with ArgoCD. These pipelines ensure consistency and efficiency in your DevOps practices.
+
+Borwse the ip_of_newly_created_instance:8080
+
+1. ssh to the newly created instance.
+2. cat /var/lib/jenkins/secrets/initialAdminPassword
+3. 
 
 
 ## STEP-
