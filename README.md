@@ -8,7 +8,6 @@ Automating Tetris Deployment with ArgoCD, Terraform, and Jenkins | By Mr. Cloud 
 4. S3 Bucket: Set up an S3 bucket to store your Terraform state files. This bucket is crucial for maintaining the state of your infrastructure and enabling collaboration.
 5. Terraform: Install Terraform on your local machine. Terraform is used for provisioning infrastructure as code and managing AWS resources. Make sure to configure Terraform to work with your AWS credentials and your S3 bucket for state storage.
 
-## STEP-1: Creating a EC2 instance with Following configuratiions using Terraform.
 ##### Creating a new user
 1. Goto IAM Dashboard.
 2. click on users
@@ -30,6 +29,8 @@ Automating Tetris Deployment with ArgoCD, Terraform, and Jenkins | By Mr. Cloud 
 5. next
 6. Create access key and download the .csv file to use later.
 
+
+## STEP-1: Creating a EC2 instance with Following configurations using Terraform.
 ##### Creating EC2 instance and other aws resources using Terraform.
 #### Clone this repo: https://github.com/Aj7Ay/Tetris-V1.git
 1. Open the clone repo with vs-code IDE.
