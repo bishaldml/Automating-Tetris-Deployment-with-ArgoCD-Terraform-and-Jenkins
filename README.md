@@ -31,8 +31,9 @@ Automating Tetris Deployment with ArgoCD, Terraform, and Jenkins | By Mr. Cloud 
 
 
 ## STEP-1: Creating a EC2 instance with Following configurations using Terraform.
-##### Creating EC2 instance and other aws resources using Terraform.
+
 #### Clone this repo: https://github.com/Aj7Ay/Tetris-V1.git
+
 1. Open the clone repo with vs-code IDE.
 2. cd Jenkins-CICD
 ```
@@ -43,7 +44,7 @@ terraform apply
 Or,
 terraform apply --auto-approve (provide this cmd only if you are sure for your code to run sucessfully)
 ```
-### *Note: You need to install the terraform on your local machine to run the above tf commands. ( Jenkins, docker, sonarqube container, trivy, terraform, kubectl and aws cli are also install)
+### *Note: You need to install the terraform on your local machine to run the above tf commands. ( Jenkins, docker, sonarqube container, trivy, terraform, kubectl and aws cli are also install on above created Jenkins_instance)
 
 
 ## STEP-2: Setting up Jenkins Pipeline
